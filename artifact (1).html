@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آثار و نوشته‌های حسین دهلوی</title>
+    <!-- استفاده از قلم وزیرمتن برای تایپوگرافی چشم‌نواز فارسی -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1c2833;
+            --accent: #9a3412;
+            --accent-soft: #ffedd5;
+            --bg-page: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-dark: #27272a;
+            --text-muted: #52525b;
+            --border: #e4e4e7;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.9;
+            scroll-behavior: smooth;
+        }
+
+        /* سربرگ شاعرانه */
+        header {
+            background: linear-gradient(135deg, #18181b 0%, #27272a 100%);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 1.5rem 3.5rem;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #fafafa;
+        }
+
+        header p.subtitle {
+            margin: 0 auto;
+            max-width: 600px;
+            color: #d4d4d8;
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        header .bio-tag {
+            display: inline-block;
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #fed7aa;
+            border: 1px solid rgba(254, 215, 170, 0.3);
+        }
+
+        /* منوی دسترسی */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0.6rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        nav a {
+            color: #f4f4f5;
+            text-decoration: none;
+            padding: 0.45rem 1.1rem;
+            margin: 0.2rem 0.3rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--accent);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 2.5rem auto;
+            padding: 0 1.25rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            font-size: 1.55rem;
+        }
+
+        /* بخش کتاب‌ها و مجموعه‌ها */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .book-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            background: #fafafa;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+        }
+
+        .book-card h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+
+        .book-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        /* چینش اشعار و غزل‌ها */
+        .poem-card {
+            background: #fffaf5;
+            border-right: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .poem-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+        }
+
+        .verse {
+            display: flex;
+            justify-content: space-between;
+            max-width: 580px;
+            margin: 0.6rem 0;
+            font-size: 1.05rem;
+        }
+
+        .verse span {
+            flex: 1;
+        }
+        .verse span:first-child {
+            padding-left: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .verse {
+                flex-direction: column;
+                margin-bottom: 0.8rem;
+            }
+            .verse span:first-child {
+                padding-left: 0;
+                margin-bottom: 0.2rem;
+            }
+        }
+
+        /* فایل صوتی و دکلمه */
+        .audio-item {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 0.6rem;
+        }
+
+        /* گالری دست‌نوشته‌ها و یادداشت‌ها */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: #eee;
+            aspect-ratio: 4 / 3;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(24, 24, 27, 0.85);
+            color: #f4f4f5;
+            padding: 6px 8px;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        /* فرم تعاملی ارتباط */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+        }
+
+        button.btn-submit {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button.btn-submit:hover {
+            background-color: #7c2d12;
+        }
+
+        .form-alert {
+            display: none;
+            margin-top: 1rem;
+            padding: 10px 14px;
+            border-radius: 6px;
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        /* لایت‌باکس */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.88);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 6px;
+        }
+
+        .modal-caption {
+            color: #fff;
+            margin-top: 12px;
+            font-size: 1rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 2.2rem;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #18181b;
+            color: #a1a1aa;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>آثار و نوشته‌های حسین دهلوی</h1>
+        <p class="subtitle">آرشیو غزل‌ها، یادداشت‌های ادبی و دفاتر شعر</p>
+        <span class="bio-tag">شاعر و غزل‌سرا | متولد ۱۳۷۲</span>
+    </header>
+
+    <nav>
+        <a href="#about">درباره شاعر</a>
+        <a href="#books">دفترهای شعر</a>
+        <a href="#poems">گزیده غزل‌ها</a>
+        <a href="#audio">دکلمه‌ها</a>
+        <a href="#gallery">دست‌نوشته‌ها</a>
+        <a href="#contact">پیام و ارتباط</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- ۱. درباره شاعر -->
+        <section id="about">
+            <h2>درباره حسین دهلوی</h2>
+            <p>
+                <strong>حسین دهلوی</strong> (زادهٔ ۱۳۷۲ در تهران) شاعر و پژوهشگر ادبیات معاصر است. او با سرودن غزل‌هایی با مضامین عاشقانه، زبانی زلال، کشف‌های تصویری تازه و رویکردی نو به قالب‌های کهن، جایگاه ویژه‌ای در میان نسل جوان غزل‌سرایان دهه نود و پس از آن باز کرد. آثار او با روانی بیان و اصالت حس در ذهن مخاطبان ماندگار شده است.
+            </p>
+        </section>
+
+        <!-- ۲. کتاب‌ها و دفترهای شعر -->
+        <section id="books">
+            <h2>دفترهای شعر و آثار منتشرشده</h2>
+            <div class="books-grid">
+                
+                <div class="book-card">
+                    <div>
+                        <h3>اشک یاس</h3>
+                        <div class="book-meta">نشر سوره مهر / مجموعه غزل</div>
+                        <p>مجموعه‌ای شامل غزل‌های عاشقانه، تأملات حسی و سروده‌های دوران آغازین سرایندگی که با استقبال مخاطبان روبه‌رو شد.</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div>
+                        <h3>نافرمانی</h3>
+                        <div class="book-meta">نشر نزدیکتر / گزیده اشعار</div>
+                        <p>تثبیت لحن عاطفی و بیانی منسجم در ساختار غزل معاصر با تصویرسازی‌های ظریف انسانی و دل‌مشغولی‌های عاشقانه.</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div>
+                        <h3>یادداشت‌ها و مقالات</h3>
+                        <div class="book-meta">مجلات و پایگاه‌های ادبی</div>
+                        <p>جستارهایی پیرامون فرم و زبان در شعر امروز، نقد شعر جوان و بررسی سیر تحول غزل در دهه‌های اخیر.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ۳. نمونه اشعار و غزل‌ها -->
+        <section id="poems">
+            <h2>گزیده غزل‌ها</h2>
+            
+            <div class="poem-card">
+                <div class="poem-title">غزل نمونه (از سروده‌های شناخته‌شده)</div>
+                <div class="verse">
+                    <span>همچون انار، خون دل از خویش می‌خوریم</span>
+                    <span>غم، پرده‌های خلوت ما را دریده است</span>
+                </div>
+                <div class="verse">
+                    <span>دیگر سراغی از دل تنگم نمی‌بری</span>
+                    <span>شاید غبار دوری بر آن نشسته است</span>
+                </div>
+                <div class="verse">
+                    <span>عمری پیِ قرار دویدیم و عاقبت</span>
+                    <span>این بیقراری از دل ما سر کشیده است</span>
+                </div>
+            </div>
+
+            <div class="poem-card">
+                <div class="poem-title">تک‌بیت‌ها و طرح‌ها</div>
+                <div class="verse">
+                    <span>به هر کس می‌رسم بعد از تو نامت را نمی‌گویم</span>
+                    <span>مبادا بشنوند و درد دوری را بفهمند...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ۴. بخش شنیداری (دکلمه‌ها) -->
+        <section id="audio">
+            <h2>دکلمه‌ها و خوانش اشعار</h2>
+            <p>شنیدن خوانش اشعار با صدای شاعر یا گویندگان:</p>
+            <div class="audio-item">
+                <label><strong>خوانش غزل با صدای شاعر:</strong></label>
+                <audio controls>
+                    <source src="audio-sample.mp3" type="audio/mpeg">
+                    مرورگر شما از پخش‌کننده پشتیبانی نمی‌کند.
+                </audio>
+            </div>
+        </section>
+
+        <!-- ۵. گالری دست‌نوشته‌ها و نشست‌های شعر -->
+        <section id="gallery">
+            <h2>دست‌نوشته‌ها و رویدادها</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80', 'دست‌نویس پیش‌نویس غزل')">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&q=80" alt="دست‌نویس">
+                    <div class="gallery-caption">دست‌نویس و اصلاحیه‌های غزل</div>
+                </div>
+
+                <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80', 'رونمایی مجموعه شعر در نمایشگاه کتاب')">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80" alt="کتاب">
+                    <div class="gallery-caption">جلسه رونمایی و نقد مجموعه شعر</div>
+                </div>
+
+                <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=800&q=80', 'شب شعر و شعرخوانی')">
+                    <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=400&q=80" alt="نشست ادبی">
+                    <div class="gallery-caption">نشست نقد غزل جوان معاصر</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ۶. فرم ارتباط و یادداشت مخاطبان -->
+        <section id="contact">
+            <h2>پیام به شاعر و ارسال یادداشت</h2>
+            <p>جهت ارسال نقد، نظر، دعوت به جلسات ادبی یا ارتباط مستقیم، فرم زیر را پر کنید:</p>
+
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name">نام و نام خانوادگی:</label>
+                    <input type="text" id="name" required placeholder="مثال: مریم احمدی">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">رایانامه (ایمیل):</label>
+                    <input type="email" id="email" required placeholder="name@domain.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">موضوع گفت‌وگو:</label>
+                    <select id="topic">
+                        <option value="feedback">دیدگاه درباره کتاب‌ها و اشعار</option>
+                        <option value="invite">دعوت به نشست شعر و شب‌های ادبی</option>
+                        <option value="critique">ارسال یادداشت نقد ادبی</option>
+                        <option value="other">سایر موارد</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">متن پیام:</label>
+                    <textarea id="message" rows="5" required placeholder="پیام خود را بنویسید..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">ارسال پیام</button>
+                <div id="formAlert" class="form-alert">پیام شما ثبت شد و به زودی خوانده خواهد شد. سپاس از همراهی شما.</div>
+            </form>
+        </section>
+    </div>
+
+    <!-- مدال لایت‌باکس تصاویر -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImg" src="" alt="بزرگنمایی تصویر">
+        <div id="modalCaption" class="modal-caption"></div>
+    </div>
+
+    <footer>
+        <p>پایگاه رسمی آثار و نوشته‌های حسین دهلوی | تمامی حقوق بازنشر برای صاحب اثر محفوظ است.</p>
+    </footer>
+
+    <script>
+        function openModal(src, caption) {
+            const modal = document.getElementById('imageModal');
+            document.getElementById('modalImg').src = src;
+            document.getElementById('modalCaption').innerText = caption;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function submitForm(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('formAlert');
+            alertBox.style.display = 'block';
+            document.getElementById('contactForm').reset();
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
